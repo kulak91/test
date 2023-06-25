@@ -11,6 +11,8 @@ const __dirname = path.dirname(__filename);
 
 let parser;
 
+console.error = () => {};
+
 beforeEach(() => {
 	parser = new CartParser();
 });
