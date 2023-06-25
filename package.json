@@ -1,19 +1,18 @@
 {
 	"name": "cart-parser",
 	"version": "0.1.0",
-  "type": "module",
 	"private": true,
 	"dependencies": {
-		"jest": "^27.5.1",
-		"jest-teamcity": "^1.11.0",
 		"react-scripts": "5.0.1",
 		"uuid": "8.3.2"
 	},
 	"scripts": {
-		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "report": "node --experimental-vm-modules node_modules/jest/bin/jest.js --json --outputFile=report.json",
+    "test": "react-scripts test --env=jsdom",
+		"test-jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"report": "node --experimental-vm-modules node_modules/jest/bin/jest.js --json --outputFile=report.json",
 		"test-old": "react-scripts test --env=jsdom --watchAll=false",
-    "test2": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+		"test2": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+		"test-rs": "react-scripts test --json > test-results.json"
 	},
 	"engines": {
 		"node": ">=16",

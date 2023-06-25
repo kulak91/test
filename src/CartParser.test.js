@@ -4,10 +4,10 @@ import { validate as validateUUID } from "uuid";
 import { writeFileSync, readFileSync, unlinkSync } from 'fs'
 
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 let parser;
 
@@ -87,8 +87,6 @@ describe("CartParser - unit tests", () => {
     describe("calcTotal", () => {
       it("should calculate the total price of a cart", () => {
 
-        console.log('*************');
-        console.log('cardData')
         const cardData = {
           items: [
             {
