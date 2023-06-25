@@ -1,6 +1,13 @@
-import CartParser from "./CartParser";
+import CartParser from "./CartParser.js";
 import { validate as validateUUID } from "uuid";
-import path from "path";
+// import path from "path";
+import { writeFileSync, readFileSync, unlinkSync } from 'fs'
+
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let parser;
 
@@ -13,19 +20,19 @@ describe("CartParser - unit tests", () => {
   describe("CartParser", () => {
     describe("readFile", () => {
       it("should read the contents of a file", () => {
-        const fs = require("fs");
+        // const fs = require("fs");
         const tmpFile = "test-cart.csv";
         const contents = parser.readFile("./samples/cart.csv");
-        fs.writeFileSync(tmpFile, contents);
+        writeFileSync(tmpFile, contents);
 
-        const expectedContents = fs.readFileSync(tmpFile, "utf8");
+        const expectedContents = readFileSync(tmpFile, "utf8");
         expect(expectedContents).toEqual(contents);
 
         const actualContents = parser.readFile(tmpFile);
 
         expect(actualContents).toEqual(expectedContents);
 
-        fs.unlinkSync(tmpFile);
+        unlinkSync(tmpFile);
       });
 
       it("should throw an error, when path is empty", () => {
