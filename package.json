@@ -10,7 +10,8 @@
 		"uuid": "8.3.2"
 	},
 	"scripts": {
-		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --json --outputFile=report.json",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "report": "node --experimental-vm-modules node_modules/jest/bin/jest.js --json --outputFile=report.json",
 		"test-old": "react-scripts test --env=jsdom --watchAll=false",
     "test2": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
 	},

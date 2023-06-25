@@ -17,8 +17,7 @@ beforeEach(() => {
 
 
 describe("CartParser - unit tests", () => {
-  describe("CartParser", () => {
-    describe("readFile", () => {
+  // describe("CartParser", () => {
       it("should read the contents of a file", () => {
         // const fs = require("fs");
         const tmpFile = "test-cart.csv";
@@ -54,7 +53,7 @@ describe("CartParser - unit tests", () => {
         );
       });
 
-    });
+    // });
 
     describe("validate", () => {
       it("should return an empty array if the contents are valid", () => {
@@ -155,7 +154,6 @@ describe("CartParser - unit tests", () => {
 		  parser.parse(path);
 		}).toThrow('Validation failed!');
 	  });
-  });
 });
 
 describe("CartParser - integration test", () => {
